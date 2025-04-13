@@ -52,13 +52,12 @@ const ChatBox = () => {
   };
 
   return (
-    <div className="chat-container">
-      {/* Add User */}
+    <div className="layout">
+    <div className="chat-container"> 
       <div className="add-user">
         <input value={newUser} onChange={(e) => setNewUser(e.target.value)} placeholder="Enter new user" />
         <button onClick={addUser}>Add User</button>
-      </div>
-      {/* User Selection */}
+      </div> 
       <div className="user-selector">
         <label>Logged in as: </label>
         <select value={currentUser} onChange={changeUser}>
@@ -71,13 +70,12 @@ const ChatBox = () => {
         </select>
       </div>
 
-      {/* Recipient Selection */}
       <div className="user-selector">
         <label>Chat with: </label>
         <select value={recipient} onChange={(e) => setRecipient(e.target.value)}>
           <option value="">-- Select Recipient --</option>
           {users
-            .filter((user) => user !== currentUser) // Exclude current user
+            .filter((user) => user !== currentUser) 
             .map((user) => (
               <option key={user} value={user}>
                 {user}
@@ -86,8 +84,9 @@ const ChatBox = () => {
         </select>
       </div>
 
-      {/* Chat Box */}
+     
       <div className="chat-box">
+      
         {messages
           .filter(
             (msg) =>
@@ -103,13 +102,13 @@ const ChatBox = () => {
           ))}
       </div>
 
-      {/* Input Box */}
       <div className="input-container">
         <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message..." />
         <button onClick={sendMessage} disabled={!currentUser || !recipient}>
           Send
         </button>
       </div>
+    </div>
     </div>
   );
 };
