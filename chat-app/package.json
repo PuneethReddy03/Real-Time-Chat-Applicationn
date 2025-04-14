@@ -1,12 +1,12 @@
 {
-  "homepage": "https://puneethreddy03.github.io/Real-Time-Chat-Applicationn/",
+  "homepage":"https://PuneethReddy03.github.io/Real-Time-Chat-Applicationn",
   "name": "chat-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-   "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
